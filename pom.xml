@@ -641,7 +641,13 @@
 		</pluginManagement>
 
 	</build>
-
+	<distributionManagement>
+		<repository>
+			<id>rdc-releases</id>
+			<name>rdc-releases</name>
+			<url>http://60.10.135.253:60083/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
 	<issueManagement>
 		<system>jira</system>
 		<url>http://code.alibabatech.com/jira/browse/DUBBO</url>
