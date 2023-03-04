@@ -13,7 +13,6 @@ on:
       ops:
         description: '请给出重新构建包的原因'
         type: environment
-        required: true
   push:
     branches: [ "main" ]
   pull_request:
@@ -37,4 +36,4 @@ jobs:
           servers: '[{"id":"rdc-releases","username":"${{ secrets.RDC_USERNAME }}","password":"${{ secrets.RDC_PASSWORD }}"},{"id":"rdc-snapshots","username":"${{ secrets.RDC_USERNAME }}","password":"${{ secrets.RDC_PASSWORD }}"}]'
           mirrors: '[{"id":"mirror","name":"mirror","mirrorOf":"central,jcenter,!rdc-releases,!rdc-snapshots","url":"https://maven.aliyun.com/nexus/content/groups/public"}]'
       - name: Build with Maven
-        run: mvn clean deploy -DskipTests -T8
+        run: mvn clean package -DskipTests -T8
